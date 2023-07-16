@@ -6,6 +6,10 @@ const GlobalStyle = createGlobalStyle`
     html {
       max-width: 1024px;
       margin: 0 auto;
+      background-color: #cae9ff;
+    }
+    body {
+        padding: 50px 0;
     }
     *{
         box-sizing: border-box;
