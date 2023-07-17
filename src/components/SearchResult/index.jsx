@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { SearchResultContainer, Item } from "./style";
+import { SearchResultContainer, CurrentKeyWord, Item, NotFound } from "./style";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import useKeyDown from "../../hooks/useKeyDown";
@@ -23,6 +23,14 @@ function SearchResult({ diseaseList, diseaseName, isComposing }) {
 
   return (
     <SearchResultContainer onClick={handleResultClick}>
+      {diseaseName ? (
+        <CurrentKeyWord>
+          <FontAwesomeIcon icon={faMagnifyingGlass} />
+          <span>{diseaseName}</span>
+        </CurrentKeyWord>
+      ) : (
+        <div></div>
+      )}
       <div>추천 검색어</div>
       {diseaseList.length > 0 && diseaseName ? (
         <>
@@ -37,7 +45,7 @@ function SearchResult({ diseaseList, diseaseName, isComposing }) {
           ))}
         </>
       ) : (
-        <div>검색어가 없습니다.</div>
+        <NotFound>검색어가 없습니다.</NotFound>
       )}
     </SearchResultContainer>
   );

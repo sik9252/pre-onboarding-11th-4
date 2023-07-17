@@ -9,11 +9,21 @@ export const SearchResultContainer = styled.div`
   border-radius: 20px;
   padding: 20px;
 
-  & > div:nth-child(1) {
+  & > div:nth-child(2) {
     font-size: 14px;
     color: #a6afb7;
     margin-bottom: 10px;
     margin-left: 5px;
+  }
+`;
+
+export const CurrentKeyWord = styled.div`
+  margin-bottom: 20px;
+  margin-left: 5px;
+
+  & > svg {
+    color: #a6afb7;
+    margin-right: 8px;
   }
 `;
 
@@ -37,4 +47,8 @@ export const Item = styled.div`
     background-color: #dddddd;
     border-radius: 10px;
   }
+`;
+
+export const NotFound = styled.div`
+  margin-left: 5px;
 `;
