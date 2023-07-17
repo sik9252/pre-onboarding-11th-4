@@ -12,10 +12,10 @@ export const useCachedApiCall = ({ isSearchBarClicked, diseaseName }) => {
         console.info("calling api");
         getDisease(diseaseName)
           .then((response) => {
-            setDiseaseList(response.data);
+            setDiseaseList(response.data.slice(0, 8));
             setCache((prevCache) => ({
               ...prevCache,
-              [diseaseName]: response.data,
+              [diseaseName]: response.data.slice(0, 8),
             }));
           })
           .catch((error) => {
