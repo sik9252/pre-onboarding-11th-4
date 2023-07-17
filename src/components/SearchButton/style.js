@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const SearchButtonContainer = styled.div`
   position: absolute;
-  right: 100px;
+  right: 15px;
 `;
 
 export const Button = styled.button`
