@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { MainContainer } from "./style";
+import { MainContainer, Title } from "./style";
 import SearchBar from "../../components/SearchBar";
 import SearchResult from "../../components/SearchResult";
 import { useCachedApiCall } from "../../hooks/useCachedApiCall";
@@ -47,6 +47,10 @@ function Main() {
 
   return (
     <MainContainer onClick={() => focusOutSearchBar()}>
+      <Title>
+        <div>국내 모든 임상시험 검색하고</div>
+        <div>온라인으로 참여하기</div>
+      </Title>
       <SearchBar
         placeholder={isSearchBarClicked ? "" : "질환명을 입력해주세요."}
         onClick={(e) => focusSearchBar(e)}
