@@ -4,12 +4,7 @@ import reset from "styled-reset";
 const GlobalStyle = createGlobalStyle`
     ${reset}
     html {
-      max-width: 1024px;
-      margin: 0 auto;
-      background-color: #cae9ff;
-    }
-    body {
-        padding: 50px 0;
+        background-color: #cae9ff;
     }
     *{
         box-sizing: border-box;
