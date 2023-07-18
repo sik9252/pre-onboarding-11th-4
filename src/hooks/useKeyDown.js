@@ -20,9 +20,6 @@ const useKeyDown = (
           setSelectedItemIndex((prevIndex) => prevIndex - 1);
         }
       }
-      if (e.key === "Escape") {
-        setSelectedItemIndex(-1);
-      }
     };
 
     window.addEventListener("keydown", handleKeyDown);
