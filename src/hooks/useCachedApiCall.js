@@ -7,7 +7,14 @@ export const useCachedApiCall = ({ isSearchBarClicked, diseaseName }) => {
 
   useEffect(() => {
     const getDiseasesFunc = () => {
-      if (diseaseName && !cache[diseaseName]) {
+      const currentTime = new Date().getTime();
+      const staleTime = 1000 * 60 * 0.3; // 캐시 30초 뒤 expire
+
+      if (
+        diseaseName &&
+        (!cache[diseaseName] ||
+          currentTime - cache[diseaseName].timestamp > staleTime)
+      ) {
         // API 호출 빈도수 확인용
         console.info("calling api");
         getDisease(diseaseName)
@@ -15,14 +22,17 @@ export const useCachedApiCall = ({ isSearchBarClicked, diseaseName }) => {
             setDiseaseList(response.data.slice(0, 8));
             setCache((prevCache) => ({
               ...prevCache,
-              [diseaseName]: response.data.slice(0, 8),
+              [diseaseName]: {
+                data: response.data.slice(0, 8),
+                timestamp: currentTime,
+              },
             }));
           })
           .catch((error) => {
             console.error("Error fetching data:", error);
           });
       } else {
-        setDiseaseList(cache[diseaseName]);
+        setDiseaseList(cache[diseaseName].data);
       }
     };
 
