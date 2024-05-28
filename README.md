@@ -8,9 +8,9 @@
 
 ![ezgif com-video-to-gif](https://github.com/sik9252/pre-onboarding-11th-4/assets/64947440/a8f7b727-2d9f-47ca-8476-3b960fe95d8c)
 
-## 📌 배포 주소
+<!--## 📌 배포 주소
 
-[View Demo](https://web-pre-onboarding-11th-4-koh2xlixy7104.sel4.cloudtype.app/)
+[View Demo](https://web-pre-onboarding-11th-4-koh2xlixy7104.sel4.cloudtype.app/)-->
 
 ## 📌 로컬 실행 방법
 
